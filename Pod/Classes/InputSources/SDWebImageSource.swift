@@ -8,23 +8,23 @@
 
 import SDWebImage
 
-public class SDWebImageSource: NSObject, InputSource {
-    var url: NSURL
+open class SDWebImageSource: NSObject, InputSource {
+    var url: URL
     var placeholder: UIImage?
     
-    public init(url: NSURL) {
+    public init(url: URL) {
         self.url = url
         super.init()
     }
     
-    public init(url: NSURL, placeholder: UIImage) {
+    public init(url: URL, placeholder: UIImage) {
         self.url = url
         self.placeholder = placeholder
         super.init()
     }
     
     public init?(urlString: String) {
-        if let validUrl = NSURL(string: urlString) {
+        if let validUrl = URL(string: urlString) {
             self.url = validUrl
             super.init()
         } else {
@@ -32,7 +32,7 @@ public class SDWebImageSource: NSObject, InputSource {
         }
     }
     
-    @objc public func setToImageView(imageView: UIImageView) {
-        imageView.sd_setImageWithURL(self.url, placeholderImage: self.placeholder)
+    @objc open func setToImageView(_ imageView: UIImageView) {
+        imageView.sd_setImage(with: self.url, placeholderImage: self.placeholder)
     }
 }

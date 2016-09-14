@@ -9,16 +9,16 @@
 import Alamofire
 import AlamofireImage
 
-public class AlamofireSource: NSObject, InputSource {
-    var url: NSURL!
+open class AlamofireSource: NSObject, InputSource {
+    var url: URL!
     
-    public init(url: NSURL) {
+    public init(url: URL) {
         self.url = url
         super.init()
     }
 
     public init?(urlString: String) {
-        if let validUrl = NSURL(string: urlString) {
+        if let validUrl = URL(string: urlString) {
             self.url = validUrl
             super.init()
         } else {
@@ -27,8 +27,8 @@ public class AlamofireSource: NSObject, InputSource {
         }
     }
     
-    public func setToImageView(imageView: UIImageView) {
-        Alamofire.request(.GET, self.url)
+    open func setToImageView(_ imageView: UIImageView) {
+        Alamofire.request(self.url, method: .get)
             .responseImage { response in
                 if let image = response.result.value {
                     imageView.image = image
