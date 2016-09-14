@@ -2,9 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.1'
 use_frameworks!
 
-target 'ImageSlideshow_Example' do
-    pod "ImageSlideshow", :path => "../"
-    pod "ImageSlideshow/AFURL", :path => "../"
-    pod "ImageSlideshow/Alamofire", :path => "../"
-    pod "ImageSlideshow/SDWebImage", :path => "../"
+target 'DPImageSlideshow_Example' do
+    pod "DPImageSlideshow", :path => "../"
+    pod "DPImageSlideshow/AFURL", :path => "../"
+    pod "DPImageSlideshow/Alamofire", :path => "../"
+    pod "DPImageSlideshow/SDWebImage", :path => "../"
 end
