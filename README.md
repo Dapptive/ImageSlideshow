@@ -37,7 +37,7 @@ ImageSlideshow is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ImageSlideshow', '~> 0.5'
+pod 'DPImageSlideshow', '~> 0.6'
 ```
 
 ## Usage
@@ -134,6 +134,10 @@ func click() {
 ## Author
 
 Petr Zvoníček
+
+## Modified by
+
+Arthur Alves
 
 ## License
 
